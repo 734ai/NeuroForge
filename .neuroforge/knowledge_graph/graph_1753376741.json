@@ -1,0 +1,381 @@
+{
+  "nodes": [
+    {
+      "id": "memory_mem1",
+      "label": "Python function optimization",
+      "type": "memory",
+      "properties": {
+        "content_hash": "8ab736123fc3d65090b4f676aa99dff7",
+        "concepts": [
+          "caching",
+          "optimization",
+          "project",
+          "optimize",
+          "python",
+          "memoization",
+          "functions",
+          "function",
+          "backend"
+        ],
+        "workspace": "/project/backend",
+        "tags": [
+          "python",
+          "optimization",
+          "performance"
+        ],
+        "content_type": "code_snippet",
+        "size": 226
+      },
+      "created_at": 1753376741.3756385,
+      "last_accessed": 1753376741.3756394,
+      "access_count": 1
+    },
+    {
+      "id": "concept_caching",
+      "label": "caching",
+      "type": "concept",
+      "properties": {
+        "frequency": 1,
+        "related_memories": [],
+        "related_tasks": []
+      },
+      "created_at": 1753376741.3757224,
+      "last_accessed": 1753376741.3757226,
+      "access_count": 1
+    },
+    {
+      "id": "concept_optimization",
+      "label": "optimization",
+      "type": "concept",
+      "properties": {
+        "frequency": 1,
+        "related_memories": [],
+        "related_tasks": []
+      },
+      "created_at": 1753376741.3759022,
+      "last_accessed": 1753376741.3759027,
+      "access_count": 1
+    },
+    {
+      "id": "concept_project",
+      "label": "project",
+      "type": "concept",
+      "properties": {
+        "frequency": 1,
+        "related_memories": [],
+        "related_tasks": []
+      },
+      "created_at": 1753376741.3759851,
+      "last_accessed": 1753376741.3759854,
+      "access_count": 1
+    },
+    {
+      "id": "concept_optimize",
+      "label": "optimize",
+      "type": "concept",
+      "properties": {
+        "frequency": 1,
+        "related_memories": [],
+        "related_tasks": []
+      },
+      "created_at": 1753376741.3760517,
+      "last_accessed": 1753376741.376052,
+      "access_count": 1
+    },
+    {
+      "id": "concept_python",
+      "label": "python",
+      "type": "concept",
+      "properties": {
+        "frequency": 1,
+        "related_memories": [],
+        "related_tasks": []
+      },
+      "created_at": 1753376741.3761108,
+      "last_accessed": 1753376741.376111,
+      "access_count": 1
+    },
+    {
+      "id": "concept_memoization",
+      "label": "memoization",
+      "type": "concept",
+      "properties": {
+        "frequency": 1,
+        "related_memories": [],
+        "related_tasks": []
+      },
+      "created_at": 1753376741.3761876,
+      "last_accessed": 1753376741.3761878,
+      "access_count": 1
+    },
+    {
+      "id": "concept_functions",
+      "label": "functions",
+      "type": "concept",
+      "properties": {
+        "frequency": 1,
+        "related_memories": [],
+        "related_tasks": []
+      },
+      "created_at": 1753376741.3762448,
+      "last_accessed": 1753376741.376245,
+      "access_count": 1
+    },
+    {
+      "id": "concept_function",
+      "label": "function",
+      "type": "concept",
+      "properties": {
+        "frequency": 1,
+        "related_memories": [],
+        "related_tasks": []
+      },
+      "created_at": 1753376741.376318,
+      "last_accessed": 1753376741.3763182,
+      "access_count": 1
+    },
+    {
+      "id": "concept_backend",
+      "label": "backend",
+      "type": "concept",
+      "properties": {
+        "frequency": 1,
+        "related_memories": [],
+        "related_tasks": []
+      },
+      "created_at": 1753376741.3763695,
+      "last_accessed": 1753376741.3763697,
+      "access_count": 1
+    },
+    {
+      "id": "task_task1",
+      "label": "Optimize database queries",
+      "type": "task",
+      "properties": {
+        "status": "completed",
+        "plugin": "performance_analyzer",
+        "parameters": {
+          "target": "database"
+        },
+        "workspace": "/project/backend",
+        "execution_time": 0,
+        "success": true
+      },
+      "created_at": 1753376741.3764772,
+      "last_accessed": 1753376741.3764777,
+      "access_count": 1
+    },
+    {
+      "id": "file_016f77ff",
+      "label": "optimize.py",
+      "type": "file",
+      "properties": {
+        "path": "/project/backend/optimize.py",
+        "extension": ".py",
+        "size": 1024,
+        "language": "python",
+        "last_modified": 1753376741.375082
+      },
+      "created_at": 1753376741.3767374,
+      "last_accessed": 1753376741.3767378,
+      "access_count": 1
+    }
+  ],
+  "edges": [
+    {
+      "source": "memory_mem1",
+      "target": "concept_caching",
+      "relationship": "contains",
+      "weight": 1.0,
+      "properties": {},
+      "created_at": 1753376741.3758693
+    },
+    {
+      "source": "memory_mem1",
+      "target": "concept_optimization",
+      "relationship": "contains",
+      "weight": 1.0,
+      "properties": {},
+      "created_at": 1753376741.375962
+    },
+    {
+      "source": "memory_mem1",
+      "target": "concept_project",
+      "relationship": "contains",
+      "weight": 1.0,
+      "properties": {},
+      "created_at": 1753376741.376033
+    },
+    {
+      "source": "memory_mem1",
+      "target": "concept_optimize",
+      "relationship": "contains",
+      "weight": 1.0,
+      "properties": {},
+      "created_at": 1753376741.3760948
+    },
+    {
+      "source": "memory_mem1",
+      "target": "concept_python",
+      "relationship": "contains",
+      "weight": 1.0,
+      "properties": {},
+      "created_at": 1753376741.376153
+    },
+    {
+      "source": "memory_mem1",
+      "target": "concept_memoization",
+      "relationship": "contains",
+      "weight": 1.0,
+      "properties": {},
+      "created_at": 1753376741.3762295
+    },
+    {
+      "source": "memory_mem1",
+      "target": "concept_functions",
+      "relationship": "contains",
+      "weight": 1.0,
+      "properties": {},
+      "created_at": 1753376741.3763025
+    },
+    {
+      "source": "memory_mem1",
+      "target": "concept_function",
+      "relationship": "contains",
+      "weight": 1.0,
+      "properties": {},
+      "created_at": 1753376741.3763561
+    },
+    {
+      "source": "memory_mem1",
+      "target": "concept_backend",
+      "relationship": "contains",
+      "weight": 1.0,
+      "properties": {},
+      "created_at": 1753376741.3764043
+    },
+    {
+      "source": "task_task1",
+      "target": "memory_mem1",
+      "relationship": "workspace_related",
+      "weight": 0.5,
+      "properties": {},
+      "created_at": 1753376741.3765976
+    },
+    {
+      "source": "task_task1",
+      "target": "memory_mem1",
+      "relationship": "concept_related",
+      "weight": 0.3333333333333333,
+      "properties": {
+        "shared_concepts": [
+          "project",
+          "optimize",
+          "backend"
+        ]
+      },
+      "created_at": 1753376741.376624
+    }
+  ],
+  "analysis": {
+    "graph_metrics": {
+      "nodes": 12,
+      "edges": 10,
+      "density": 0.0758,
+      "components": 2,
+      "largest_component_size": 11
+    },
+    "node_distribution": {
+      "memory": 1,
+      "concept": 9,
+      "task": 1,
+      "file": 1
+    },
+    "relationship_distribution": {
+      "contains": 9,
+      "workspace_related": 1,
+      "concept_related": 1
+    },
+    "influential_nodes": [
+      {
+        "id": "memory_mem1",
+        "label": "Python function optimization",
+        "type": "memory",
+        "score": 0.1378295618289005
+      },
+      {
+        "id": "concept_caching",
+        "label": "caching",
+        "type": "concept",
+        "score": 0.0875187475479328
+      },
+      {
+        "id": "concept_optimization",
+        "label": "optimization",
+        "type": "concept",
+        "score": 0.0875187475479328
+      },
+      {
+        "id": "concept_project",
+        "label": "project",
+        "type": "concept",
+        "score": 0.0875187475479328
+      },
+      {
+        "id": "concept_optimize",
+        "label": "optimize",
+        "type": "concept",
+        "score": 0.0875187475479328
+      }
+    ],
+    "top_concepts": [
+      {
+        "concept": "caching",
+        "frequency": 1,
+        "connections": 1
+      },
+      {
+        "concept": "optimization",
+        "frequency": 1,
+        "connections": 1
+      },
+      {
+        "concept": "project",
+        "frequency": 1,
+        "connections": 1
+      },
+      {
+        "concept": "optimize",
+        "frequency": 1,
+        "connections": 1
+      },
+      {
+        "concept": "python",
+        "frequency": 1,
+        "connections": 1
+      },
+      {
+        "concept": "memoization",
+        "frequency": 1,
+        "connections": 1
+      },
+      {
+        "concept": "functions",
+        "frequency": 1,
+        "connections": 1
+      },
+      {
+        "concept": "function",
+        "frequency": 1,
+        "connections": 1
+      },
+      {
+        "concept": "backend",
+        "frequency": 1,
+        "connections": 1
+      }
+    ],
+    "analysis_timestamp": 1753376741.3767655
+  },
+  "export_timestamp": 1753376741.7154706
+}

@@ -1,0 +1,366 @@
+{
+  "nodes": [
+    {
+      "id": "memory_mem_advanced",
+      "label": "Advanced Python patterns",
+      "type": "memory",
+      "properties": {
+        "content_hash": "29ab1ba892f6c6de03509f6ebe2da941",
+        "concepts": [
+          "patterns",
+          "principles",
+          "advanced",
+          "applications",
+          "documentation",
+          "design",
+          "architectural",
+          "project",
+          "python"
+        ],
+        "workspace": "/project/advanced",
+        "tags": [
+          "python",
+          "patterns",
+          "architecture"
+        ],
+        "content_type": "documentation",
+        "size": 296
+      },
+      "created_at": 1753373368.683818,
+      "last_accessed": 1753376968.6843407,
+      "access_count": 1
+    },
+    {
+      "id": "concept_patterns",
+      "label": "patterns",
+      "type": "concept",
+      "properties": {
+        "frequency": 1,
+        "related_memories": [],
+        "related_tasks": []
+      },
+      "created_at": 1753376968.6844459,
+      "last_accessed": 1753376968.6844466,
+      "access_count": 1
+    },
+    {
+      "id": "concept_principles",
+      "label": "principles",
+      "type": "concept",
+      "properties": {
+        "frequency": 1,
+        "related_memories": [],
+        "related_tasks": []
+      },
+      "created_at": 1753376968.6846592,
+      "last_accessed": 1753376968.68466,
+      "access_count": 1
+    },
+    {
+      "id": "concept_advanced",
+      "label": "advanced",
+      "type": "concept",
+      "properties": {
+        "frequency": 1,
+        "related_memories": [],
+        "related_tasks": []
+      },
+      "created_at": 1753376968.684801,
+      "last_accessed": 1753376968.6848013,
+      "access_count": 1
+    },
+    {
+      "id": "concept_applications",
+      "label": "applications",
+      "type": "concept",
+      "properties": {
+        "frequency": 1,
+        "related_memories": [],
+        "related_tasks": []
+      },
+      "created_at": 1753376968.6848686,
+      "last_accessed": 1753376968.6848686,
+      "access_count": 1
+    },
+    {
+      "id": "concept_documentation",
+      "label": "documentation",
+      "type": "concept",
+      "properties": {
+        "frequency": 1,
+        "related_memories": [],
+        "related_tasks": []
+      },
+      "created_at": 1753376968.684936,
+      "last_accessed": 1753376968.6849363,
+      "access_count": 1
+    },
+    {
+      "id": "concept_design",
+      "label": "design",
+      "type": "concept",
+      "properties": {
+        "frequency": 1,
+        "related_memories": [],
+        "related_tasks": []
+      },
+      "created_at": 1753376968.685,
+      "last_accessed": 1753376968.6850002,
+      "access_count": 1
+    },
+    {
+      "id": "concept_architectural",
+      "label": "architectural",
+      "type": "concept",
+      "properties": {
+        "frequency": 1,
+        "related_memories": [],
+        "related_tasks": []
+      },
+      "created_at": 1753376968.6850579,
+      "last_accessed": 1753376968.685058,
+      "access_count": 1
+    },
+    {
+      "id": "concept_project",
+      "label": "project",
+      "type": "concept",
+      "properties": {
+        "frequency": 1,
+        "related_memories": [],
+        "related_tasks": []
+      },
+      "created_at": 1753376968.6851118,
+      "last_accessed": 1753376968.685112,
+      "access_count": 1
+    },
+    {
+      "id": "concept_python",
+      "label": "python",
+      "type": "concept",
+      "properties": {
+        "frequency": 1,
+        "related_memories": [],
+        "related_tasks": []
+      },
+      "created_at": 1753376968.6851888,
+      "last_accessed": 1753376968.685189,
+      "access_count": 1
+    },
+    {
+      "id": "task_task_refactor",
+      "label": "Refactor legacy codebase",
+      "type": "task",
+      "properties": {
+        "status": "completed",
+        "plugin": "refactoring_assistant",
+        "parameters": {
+          "target": "legacy_module.py"
+        },
+        "workspace": "/project/advanced",
+        "execution_time": 15.5,
+        "success": true
+      },
+      "created_at": 1753376968.6852977,
+      "last_accessed": 1753376968.6852982,
+      "access_count": 1
+    },
+    {
+      "id": "file_21985242",
+      "label": "patterns.py",
+      "type": "file",
+      "properties": {
+        "path": "/project/advanced/patterns.py",
+        "extension": ".py",
+        "size": 2048,
+        "language": "python",
+        "last_modified": 1753376068.6838267
+      },
+      "created_at": 1753376968.6854942,
+      "last_accessed": 1753376968.685495,
+      "access_count": 1
+    }
+  ],
+  "edges": [
+    {
+      "source": "memory_mem_advanced",
+      "target": "concept_patterns",
+      "relationship": "contains",
+      "weight": 1.0,
+      "properties": {},
+      "created_at": 1753376968.6846125
+    },
+    {
+      "source": "memory_mem_advanced",
+      "target": "concept_principles",
+      "relationship": "contains",
+      "weight": 1.0,
+      "properties": {},
+      "created_at": 1753376968.6847613
+    },
+    {
+      "source": "memory_mem_advanced",
+      "target": "concept_advanced",
+      "relationship": "contains",
+      "weight": 1.0,
+      "properties": {},
+      "created_at": 1753376968.6848507
+    },
+    {
+      "source": "memory_mem_advanced",
+      "target": "concept_applications",
+      "relationship": "contains",
+      "weight": 1.0,
+      "properties": {},
+      "created_at": 1753376968.68492
+    },
+    {
+      "source": "memory_mem_advanced",
+      "target": "concept_documentation",
+      "relationship": "contains",
+      "weight": 1.0,
+      "properties": {},
+      "created_at": 1753376968.6849816
+    },
+    {
+      "source": "memory_mem_advanced",
+      "target": "concept_design",
+      "relationship": "contains",
+      "weight": 1.0,
+      "properties": {},
+      "created_at": 1753376968.6850421
+    },
+    {
+      "source": "memory_mem_advanced",
+      "target": "concept_architectural",
+      "relationship": "contains",
+      "weight": 1.0,
+      "properties": {},
+      "created_at": 1753376968.6850967
+    },
+    {
+      "source": "memory_mem_advanced",
+      "target": "concept_project",
+      "relationship": "contains",
+      "weight": 1.0,
+      "properties": {},
+      "created_at": 1753376968.6851678
+    },
+    {
+      "source": "memory_mem_advanced",
+      "target": "concept_python",
+      "relationship": "contains",
+      "weight": 1.0,
+      "properties": {},
+      "created_at": 1753376968.6852384
+    },
+    {
+      "source": "task_task_refactor",
+      "target": "memory_mem_advanced",
+      "relationship": "workspace_related",
+      "weight": 0.5,
+      "properties": {},
+      "created_at": 1753376968.6853855
+    }
+  ],
+  "analysis": {
+    "graph_metrics": {
+      "nodes": 12,
+      "edges": 10,
+      "density": 0.0758,
+      "components": 2,
+      "largest_component_size": 11
+    },
+    "node_distribution": {
+      "memory": 1,
+      "concept": 9,
+      "task": 1,
+      "file": 1
+    },
+    "relationship_distribution": {
+      "contains": 9,
+      "workspace_related": 1
+    },
+    "influential_nodes": [
+      {
+        "id": "memory_mem_advanced",
+        "label": "Advanced Python patterns",
+        "type": "memory",
+        "score": 0.1378295618289005
+      },
+      {
+        "id": "concept_patterns",
+        "label": "patterns",
+        "type": "concept",
+        "score": 0.0875187475479328
+      },
+      {
+        "id": "concept_principles",
+        "label": "principles",
+        "type": "concept",
+        "score": 0.0875187475479328
+      },
+      {
+        "id": "concept_advanced",
+        "label": "advanced",
+        "type": "concept",
+        "score": 0.0875187475479328
+      },
+      {
+        "id": "concept_applications",
+        "label": "applications",
+        "type": "concept",
+        "score": 0.0875187475479328
+      }
+    ],
+    "top_concepts": [
+      {
+        "concept": "patterns",
+        "frequency": 1,
+        "connections": 1
+      },
+      {
+        "concept": "principles",
+        "frequency": 1,
+        "connections": 1
+      },
+      {
+        "concept": "advanced",
+        "frequency": 1,
+        "connections": 1
+      },
+      {
+        "concept": "applications",
+        "frequency": 1,
+        "connections": 1
+      },
+      {
+        "concept": "documentation",
+        "frequency": 1,
+        "connections": 1
+      },
+      {
+        "concept": "design",
+        "frequency": 1,
+        "connections": 1
+      },
+      {
+        "concept": "architectural",
+        "frequency": 1,
+        "connections": 1
+      },
+      {
+        "concept": "project",
+        "frequency": 1,
+        "connections": 1
+      },
+      {
+        "concept": "python",
+        "frequency": 1,
+        "connections": 1
+      }
+    ],
+    "analysis_timestamp": 1753376968.6855218
+  },
+  "export_timestamp": 1753376969.3940566
+}

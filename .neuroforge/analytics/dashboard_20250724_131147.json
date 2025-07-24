@@ -1,0 +1,141 @@
+[
+  {
+    "memory_stats": {
+      "total_memories": 25,
+      "active_memories": 25,
+      "memory_types": {
+        "code_snippet": 13,
+        "documentation": 12
+      },
+      "workspace_distribution": {
+        "/project/0": 9,
+        "/project/1": 8,
+        "/project/2": 8
+      },
+      "average_size": 43.8,
+      "growth_rate": 3.5714285714285716,
+      "access_patterns": {
+        "rare": 8,
+        "moderate": 8,
+        "frequent": 9
+      },
+      "tag_frequency": {
+        "python": 13,
+        "test": 13,
+        "docs": 12,
+        "tutorial": 12
+      }
+    },
+    "task_stats": {
+      "total_tasks": 15,
+      "completed_tasks": 10,
+      "failed_tasks": 5,
+      "plugin_usage": {
+        "plugin_0": 4,
+        "plugin_1": 4,
+        "plugin_2": 4,
+        "plugin_3": 3
+      },
+      "success_rate": 66.66666666666666,
+      "average_execution_time": 9,
+      "workspace_activity": {
+        "/project/0": 8,
+        "/project/1": 7
+      },
+      "performance_trends": [
+        {
+          "date": "2025-07-24",
+          "tasks_completed": 0,
+          "total_tasks": 0,
+          "success_rate": 0
+        },
+        {
+          "date": "2025-07-23",
+          "tasks_completed": 10,
+          "total_tasks": 15,
+          "success_rate": 66.66666666666666
+        },
+        {
+          "date": "2025-07-22",
+          "tasks_completed": 0,
+          "total_tasks": 0,
+          "success_rate": 0
+        },
+        {
+          "date": "2025-07-21",
+          "tasks_completed": 0,
+          "total_tasks": 0,
+          "success_rate": 0
+        },
+        {
+          "date": "2025-07-20",
+          "tasks_completed": 0,
+          "total_tasks": 0,
+          "success_rate": 0
+        },
+        {
+          "date": "2025-07-19",
+          "tasks_completed": 0,
+          "total_tasks": 0,
+          "success_rate": 0
+        },
+        {
+          "date": "2025-07-18",
+          "tasks_completed": 0,
+          "total_tasks": 0,
+          "success_rate": 0
+        }
+      ]
+    },
+    "knowledge_graph_stats": {
+      "graph_metrics": {
+        "nodes": 50,
+        "edges": 75,
+        "density": 0.12,
+        "components": 2,
+        "largest_component_size": 45
+      },
+      "node_distribution": {
+        "memory": 25,
+        "task": 15,
+        "concept": 10
+      },
+      "relationship_distribution": {
+        "similar_to": 40,
+        "contains": 35
+      }
+    },
+    "performance_metrics": {
+      "memory_engine": {
+        "cache_hit_rate": 0,
+        "average_search_time": 0,
+        "storage_efficiency": 0,
+        "index_size": 0
+      },
+      "task_agent": {
+        "average_task_time": 0,
+        "plugin_load_time": 0,
+        "queue_length": 0,
+        "active_threads": 0
+      },
+      "system": {
+        "cpu_usage": 100.0,
+        "memory_usage": 59.4,
+        "disk_usage": 4.6,
+        "load_average": 7.119140625
+      },
+      "timestamp": 1753377107.626441
+    },
+    "recommendations": [
+      {
+        "type": "task_reliability",
+        "priority": "high",
+        "title": "Task Success Rate Low",
+        "description": "Task success rate is 66.7%. Review failed tasks and improve error handling.",
+        "action": "review_failed_tasks",
+        "impact": "Increased automation reliability"
+      }
+    ],
+    "last_updated": 1753377107.6265142
+  }
+]

@@ -1,0 +1,39 @@
+{
+  "nodes": [
+    {
+      "id": "memory_mem1",
+      "label": "Python function optimization",
+      "type": "memory",
+      "properties": {
+        "content_hash": "8ab736123fc3d65090b4f676aa99dff7",
+        "concepts": [
+          "caching",
+          "python",
+          "memoization",
+          "functions",
+          "optimize",
+          "project",
+          "backend",
+          "function",
+          "optimization"
+        ],
+        "workspace": "/project/backend",
+        "tags": [
+          "python",
+          "optimization",
+          "performance"
+        ],
+        "content_type": "code_snippet",
+        "size": 226
+      },
+      "created_at": 1753376715.91927,
+      "last_accessed": 1753376715.9192708,
+      "access_count": 1
+    },
+    {
+      "id": "concept_caching",
+      "label": "caching",
+      "type": "concept",
+      "properties": {
+        "frequency": 1,
+        "related_memories": 

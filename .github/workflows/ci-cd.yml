@@ -1,0 +1,260 @@
+name: NeuroForge CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, develop ]
+    tags: [ 'v*' ]
+  pull_request:
+    branches: [ main ]
+
+env:
+  PYTHON_VERSION: '3.13'
+  NODE_VERSION: '18'
+
+jobs:
+  test-python:
+    name: Python Tests
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+    
+    - name: Cache Python dependencies
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements*.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install -r requirements-core.txt
+        pip install -r requirements-llm.txt
+    
+    - name: Run core tests
+      run: python test_core.py
+    
+    - name: Run LLM tests
+      run: python test_llm.py
+    
+    - name: Upload test reports
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: python-test-reports
+        path: |
+          .neuroforge/reports/
+          .neuroforge/refactoring/
+
+  test-extension:
+    name: Extension Tests
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ env.NODE_VERSION }}
+        cache: 'npm'
+        cache-dependency-path: extension/package-lock.json
+    
+    - name: Install dependencies
+      run: |
+        cd extension
+        npm ci
+    
+    - name: Lint TypeScript
+      run: |
+        cd extension
+        npm run lint || echo "Linting completed with warnings"
+    
+    - name: Compile TypeScript
+      run: |
+        cd extension
+        npm run compile
+    
+    - name: Package extension
+      run: |
+        cd extension
+        npx vsce package --out neuroforge-${{ github.sha }}.vsix
+    
+    - name: Upload extension artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: extension-package
+        path: extension/*.vsix
+
+  security-scan:
+    name: Security Scan
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Run Python security scan
+      uses: pypa/gh-action-pip-audit@v1.0.8
+      with:
+        inputs: requirements.txt requirements-core.txt requirements-llm.txt
+        ignore-vulns: |
+          # Add any known false positives here
+    
+    - name: Run Node.js security scan
+      run: |
+        cd extension
+        npm audit --audit-level moderate
+
+  quality-check:
+    name: Code Quality
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+    
+    - name: Install quality tools
+      run: |
+        pip install black isort mypy flake8
+    
+    - name: Check code formatting
+      run: |
+        black --check --diff agent/ test_*.py
+    
+    - name: Check import sorting
+      run: |
+        isort --check-only --diff agent/ test_*.py
+    
+    - name: Run type checking
+      run: |
+        mypy agent/ --ignore-missing-imports
+    
+    - name: Run linting
+      run: |
+        flake8 agent/ test_*.py --max-line-length=88 --extend-ignore=E203,W503
+
+  build-release:
+    name: Build Release
+    runs-on: ubuntu-latest
+    needs: [test-python, test-extension, security-scan, quality-check]
+    if: startsWith(github.ref, 'refs/tags/v')
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+    
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ env.NODE_VERSION }}
+        cache: 'npm'
+        cache-dependency-path: extension/package-lock.json
+    
+    - name: Install Python dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install -r requirements-core.txt
+        pip install -r requirements-llm.txt
+    
+    - name: Build extension
+      run: |
+        cd extension
+        npm ci
+        npm run compile
+        npx vsce package
+    
+    - name: Extract version
+      id: version
+      run: echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
+    
+    - name: Create Release Notes
+      run: |
+        cat > release-notes.md << EOF
+        # NeuroForge Release ${{ steps.version.outputs.VERSION }}
+        
+        ## Features
+        - AI-powered memory engine with LMDB persistence
+        - Task automation system with plugin architecture
+        - LLM integration (OpenAI, Anthropic, local models)
+        - VS Code extension with interactive webviews
+        - Code analysis and refactoring automation
+        - Git workflow integration
+        
+        ## Installation
+        \`\`\`bash
+        code --install-extension neuroforge-${{ steps.version.outputs.VERSION }}.vsix
+        \`\`\`
+        
+        ## Requirements
+        - VS Code 1.74.0+
+        - Python 3.8+
+        - Git
+        
+        See INSTALL.md for detailed setup instructions.
+        EOF
+    
+    - name: Create GitHub Release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: NeuroForge v${{ steps.version.outputs.VERSION }}
+        body_path: release-notes.md
+        draft: false
+        prerelease: false
+    
+    - name: Upload Extension to Release
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: extension/neuroforge-0.1.0.vsix
+        asset_name: neuroforge-${{ steps.version.outputs.VERSION }}.vsix
+        asset_content_type: application/zip
+
+  publish-marketplace:
+    name: Publish to VS Code Marketplace
+    runs-on: ubuntu-latest
+    needs: [build-release]
+    if: startsWith(github.ref, 'refs/tags/v') && !contains(github.ref, '-')
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ env.NODE_VERSION }}
+        cache: 'npm'
+        cache-dependency-path: extension/package-lock.json
+    
+    - name: Install dependencies
+      run: |
+        cd extension
+        npm ci
+    
+    - name: Publish to VS Code Marketplace
+      run: |
+        cd extension
+        npx vsce publish -p ${{ secrets.VSCE_PAT }}
+      env:
+        VSCE_PAT: ${{ secrets.VSCE_PAT }}
