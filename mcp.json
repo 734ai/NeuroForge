@@ -1,0 +1,43 @@
+{
+  "name": "neuroforge",
+  "version": "0.1.0",
+  "description": "Memory-Controlled Processing for Task Automation in VSCode",
+  "components": {
+    "memory_engine": {
+      "type": "python",
+      "path": "agent/memory_engine.py",
+      "description": "Hybrid memory system with RAM buffer and persistent storage"
+    },
+    "task_agent": {
+      "type": "python", 
+      "path": "agent/task_agent.py",
+      "description": "Main agent orchestration and task execution"
+    },
+    "vscode_extension": {
+      "type": "typescript",
+      "path": "extension/",
+      "description": "VSCode extension host and UI integration"
+    }
+  },
+  "plugins": {
+    "git_autocommit": {
+      "path": "agent/plugins/git_autocommit.py",
+      "capabilities": ["git", "commit", "diff"]
+    },
+    "test_runner": {
+      "path": "agent/plugins/test_runner.py", 
+      "capabilities": ["test", "pytest", "validation"]
+    },
+    "doc_writer": {
+      "path": "agent/plugins/doc_writer.py",
+      "capabilities": ["documentation", "markdown", "analysis"]
+    }
+  },
+  "config": {
+    "memory_backend": "lmdb",
+    "vector_store": "chromadb",
+    "encryption": false,
+    "telemetry": false,
+    "offline_mode": true
+  }
+}

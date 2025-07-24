@@ -1,0 +1,29 @@
+# Core agent framework
+asyncio
+dataclasses
+typing-extensions
+pydantic>=2.0
+
+# Memory & Storage
+lmdb>=1.4.0
+chromadb>=0.4.0
+duckdb>=0.9.0
+
+# Git integration
+GitPython>=3.1.0
+
+# Task execution
+psutil
+
+# Optional LLM integrations
+openai>=1.0.0
+anthropic
+ollama-python
+
+# Testing
+pytest>=7.0.0
+pytest-asyncio
+
+# Development
+black
+mypy

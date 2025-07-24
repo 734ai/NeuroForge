@@ -1,0 +1,22 @@
+# Core agent framework (essential)
+asyncio
+dataclasses  
+typing-extensions
+pydantic>=2.0
+
+# Memory & Storage (core only)
+lmdb>=1.4.0
+
+# Git integration
+GitPython>=3.1.0
+
+# Task execution
+psutil
+
+# Testing
+pytest>=7.0.0
+pytest-asyncio
+
+# Development
+black
+mypy
