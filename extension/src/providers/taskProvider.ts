@@ -18,7 +18,7 @@ export class TaskProvider implements vscode.TreeDataProvider<TaskItem> {
 
     private async loadTasks(): Promise<void> {
         try {
-            // For now, we'll create some mock tasks
+            // For now, we'll create some mock tasks including LLM tasks
             // TODO: Get actual tasks from the agent
             this.tasks = [
                 {
@@ -35,6 +35,21 @@ export class TaskProvider implements vscode.TreeDataProvider<TaskItem> {
                     taskId: 'task-3',
                     status: 'pending',
                     result: { message: 'Waiting to start documentation generation' }
+                },
+                {
+                    taskId: 'llm-analyzer-1',
+                    status: 'completed',
+                    result: { message: 'Code analysis completed - 3 issues found' }
+                },
+                {
+                    taskId: 'llm-refactor-1',
+                    status: 'running',
+                    result: { message: 'Refactoring suggestions being generated...' }
+                },
+                {
+                    taskId: 'llm-docs-1',
+                    status: 'pending',
+                    result: { message: 'AI documentation generation queued' }
                 }
             ];
         } catch (error) {

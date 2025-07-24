@@ -1,0 +1,16 @@
+{
+  "analysis_type": "quality",
+  "workspace_path": ".",
+  "files_analyzed": [],
+  "findings": [],
+  "summary": "No files found to analyze.",
+  "recommendations": [],
+  "metrics": {
+    "total_findings": 0,
+    "quality_score": 100,
+    "risk_level": "low"
+  },
+  "timestamp": 15660.297046484,
+  "llm_provider": "LLMProvider.MOCK",
+  "execution_time": 0.0
+}

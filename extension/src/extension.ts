@@ -46,6 +46,63 @@ export function activate(context: vscode.ExtensionContext) {
                 taskProvider.refresh();
             }
         }),
+
+        vscode.commands.registerCommand('neuroforge.analyzeCode', async () => {
+            const editor = vscode.window.activeTextEditor;
+            if (!editor) {
+                vscode.window.showWarningMessage('Please open a file to analyze');
+                return;
+            }
+
+            const result = await agent.submitTask('analyze_code', {
+                file_path: editor.document.fileName,
+                code_content: editor.document.getText()
+            });
+            vscode.window.showInformationMessage(`Code analysis started: ${result.taskId}`);
+            taskProvider.refresh();
+        }),
+
+        vscode.commands.registerCommand('neuroforge.refactorCode', async () => {
+            const editor = vscode.window.activeTextEditor;
+            if (!editor) {
+                vscode.window.showWarningMessage('Please open a file to refactor');
+                return;
+            }
+
+            const refactorType = await vscode.window.showQuickPick([
+                'improve_readability',
+                'extract_methods',
+                'optimize_performance',
+                'enhance_security'
+            ], {
+                placeHolder: 'Select refactoring type'
+            });
+
+            if (refactorType) {
+                const result = await agent.submitTask('refactor_code', {
+                    file_path: editor.document.fileName,
+                    refactoring_type: refactorType,
+                    dry_run: true
+                });
+                vscode.window.showInformationMessage(`Refactoring analysis started: ${result.taskId}`);
+                taskProvider.refresh();
+            }
+        }),
+
+        vscode.commands.registerCommand('neuroforge.generateDocs', async () => {
+            const editor = vscode.window.activeTextEditor;
+            if (!editor) {
+                vscode.window.showWarningMessage('Please open a file to document');
+                return;
+            }
+
+            const result = await agent.submitTask('generate_docs', {
+                file_path: editor.document.fileName,
+                code_content: editor.document.getText()
+            });
+            vscode.window.showInformationMessage(`Documentation generation started: ${result.taskId}`);
+            taskProvider.refresh();
+        }),
         
         vscode.commands.registerCommand('neuroforge.storeMemory', async () => {
             const editor = vscode.window.activeTextEditor;

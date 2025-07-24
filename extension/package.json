@@ -59,6 +59,21 @@
         "command": "neuroforge.runTests",
         "title": "Run Tests with Memory",
         "category": "NeuroForge"
+      },
+      {
+        "command": "neuroforge.analyzeCode",
+        "title": "🧠 Analyze Code with AI",
+        "category": "NeuroForge"
+      },
+      {
+        "command": "neuroforge.refactorCode",
+        "title": "🔄 Refactor Code with AI",
+        "category": "NeuroForge"
+      },
+      {
+        "command": "neuroforge.generateDocs",
+        "title": "📝 Generate Documentation with AI",
+        "category": "NeuroForge"
       }
     ],
     "menus": {
@@ -86,6 +101,18 @@
         {
           "command": "neuroforge.runTests",
           "when": "true"
+        },
+        {
+          "command": "neuroforge.analyzeCode",
+          "when": "editorLangId == 'python' || editorLangId == 'javascript' || editorLangId == 'typescript'"
+        },
+        {
+          "command": "neuroforge.refactorCode",
+          "when": "editorLangId == 'python' || editorLangId == 'javascript' || editorLangId == 'typescript'"
+        },
+        {
+          "command": "neuroforge.generateDocs",
+          "when": "editorLangId == 'python' || editorLangId == 'javascript' || editorLangId == 'typescript'"
         }
       ],
       "editor/context": [
@@ -93,6 +120,21 @@
           "command": "neuroforge.storeMemory",
           "group": "neuroforge",
           "when": "editorHasSelection"
+        },
+        {
+          "command": "neuroforge.analyzeCode",
+          "group": "neuroforge@1",
+          "when": "editorLangId == 'python' || editorLangId == 'javascript' || editorLangId == 'typescript'"
+        },
+        {
+          "command": "neuroforge.refactorCode",
+          "group": "neuroforge@2",
+          "when": "editorLangId == 'python' || editorLangId == 'javascript' || editorLangId == 'typescript'"
+        },
+        {
+          "command": "neuroforge.generateDocs",
+          "group": "neuroforge@3",
+          "when": "editorLangId == 'python' || editorLangId == 'javascript' || editorLangId == 'typescript'"
         }
       ]
     },
